@@ -30,18 +30,18 @@ Udacity Deep Reinforcement Learning Nanodegree Program - Reacher Continuous Cont
 
 
 ## The problem:
-- The task solved here refers to a continuous control problem where the agent must be able to reach and go along a moving ball controlling its arms.
-- It's a continuous problem because the action has a continuous value and the agent must be able to provide this value instead of just chose the one with the bigest value (like in discrete tasks where it should just says what action it wants to execute)
-- The reward of +0.1 is provied for each step that the agent's had is in the goal location, in this case, the moving ball.
+- The task solved here refers to a continuous control problem where the agent must be able to reach and go along with a moving ball controlling its arms.
+- It's a continuous problem because the action has a continuous value and the agent must be able to provide this value instead of just chose the one with the biggest value (like in discrete tasks where it should just say which action it wants to execute).
+- The reward of +0.1 is provided for each step that the agent's hand is in the goal location, in this case, the moving ball.
 - The environment provides 2 versions, one with just 1 agent and another one with 20 agents working in parallel.
-- For both versions the goal is get an average score of +30 over 100 consecutive episodes (for the second version, the average score of all agents must be +30).
+- For both versions the goal is to get an average score of +30 over 100 consecutive episodes (for the second version, the average score of all agents must be +30).
 
 
 ## The solution:
-- For this problem I am using an implementation of the Deep Deterministic Policy Gradients algorithm.
-- This task brought two big challenges for me: hyperparameters tuning and noise range configuration. After I've found the right configuration for this two points the solution worked impressively well. I must say that the noise range configuration is the key for this task. As the action is as continuous value, dealing with noise correctly means more generalization and makes the network convergence faster and more robust. The other hyperparameters increase the convergence speed but almost never prevent the agent of finding the solution whereas the wrong noise range configuration can easily makes the agent unstable and I risk saying impossible to converge.
-- Another thing to underline here is how great the aproach used in actor critic structures in general is. It really take the good part of both worlds, value based methods and policy gradient methods, and make them work together in a impressive way. Especially in this task, the way the actor and critic learn together sharing their experiences really brought to my eyes a revolutionary point of view about how to build machine learning algorithms. It's really worth to take a look.
-- For the future, although the actual solution seems pretty good for me, I stil want to check this task with the D4PG algorithm and discover when and where each of the algorithms (DDPG vs. D4PG) have the best performance.
+- For this problem I used an implementation of the Deep Deterministic Policy Gradients algorithm.
+- This task brought two big challenges for me: hyperparameters tunning and noise range configuration. After I found the right configuration for these two points the solution worked impressively well. I must say that the noise range configuration is the key for this task. As the action is a continuous value, dealing with noise correctly means more generalization and makes the agent convergence faster and more robust. The other hyperparameters increase the convergence speed but almost never prevent the agent from finding the solution whereas the wrong noise range configuration can easily make the agent unstable and, I risk saying, impossible to converge.
+- Another thing to highlight here is how great the approach used in actor critic structures in general is. It really takes the good part of both worlds, value based methods and policy gradient methods, and makes them work together in an impressive way. Especially in this task, the way the actor and critic learn together sharing their experiences really brought to my eyes a revolutionary point of view about how to build machine learning algorithms. It's really worth to take a look.
+- For the future, although the actual solution seems pretty good to me, I stil want to check this task with the D4PG algorithm and discover when and where each of the algorithms (DDPG vs. D4PG) have the best performance.
 
 
 ### The hyperparameters:
