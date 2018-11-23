@@ -122,10 +122,7 @@ class Agent():
 
         # ----------------------- update target networks ----------------------- #
         self.soft_update(self.critic_local, self.critic_target)
-        self.soft_update(self.actor_local, self.actor_target)   
-           
-        self.actor_loss = actor_loss.data
-        self.critic_loss = critic_loss.data        
+        self.soft_update(self.actor_local, self.actor_target)
 
     def soft_update(self, local_model, target_model):
         """Soft update model parameters.
